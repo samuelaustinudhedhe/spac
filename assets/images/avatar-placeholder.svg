@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Placeholder student photo">
+  <!-- Placeholder avatar — swap for {{STUDENT_PHOTO}} before submission -->
+  <rect width="220" height="220" fill="#eceef2"/>
+  <circle cx="110" cy="86" r="42" fill="#9aa3b2"/>
+  <path d="M30 210 C30 156 70 132 110 132 C150 132 190 156 190 210 Z" fill="#9aa3b2"/>
+</svg>

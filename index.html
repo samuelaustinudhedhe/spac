@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{STUDENT_NAME}} | Student Portfolio</title>
+  <meta name="description" content="Personal academic portfolio and student management site for {{STUDENT_NAME}}, Software Engineering student at MIVA Open University.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="gate-locked">
+
+  <!-- ============ ENTRY GATE ============
+       Clicking "Enter Site" fades this out and speaks a short
+       welcome line via the Web Speech API (see js/main.js).
+       The animated gradient below is a placeholder for a real
+       generated intro video — once you have one, drop it in
+       assets/video/intro.mp4 and uncomment the <video> tag. -->
+  <div class="intro-gate" id="intro-gate">
+    <!-- <video autoplay muted loop playsinline src="assets/video/intro.mp4"></video> -->
+    <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo" class="intro-gate__logo">
+    <h1>Welcome to {{STUDENT_NAME}}'s Portfolio</h1>
+    <p>Software Engineering student at MIVA Open University — step in to explore my profile, projects, and academic planner.</p>
+    <button class="btn btn-gold" id="enter-site-btn">Enter Site ▶</button>
+    <small>Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></small>
+  </div>
+
+  <!-- Shared click sound effect element, reused by js/main.js -->
+  <audio id="click-sfx" src="assets/audio/click.mp3" preload="auto"></audio>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+        <span>{{STUDENT_NAME}}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-photo">
+          <img src="assets/images/avatar-placeholder.svg" alt="Photo of {{STUDENT_NAME}}">
+        </div>
+        <div class="hero-text">
+          <span class="eyebrow">Software Engineering Student &middot; MIVA Open University</span>
+          <h1>Hi, I'm {{STUDENT_NAME}} 👋</h1>
+          <p>Welcome to my academic portfolio. I'm currently in my second year, first semester, studying
+             Software Engineering at MIVA Open University — this site brings together my profile, projects,
+             and a personal academic planner in one place.</p>
+          <div class="hero-cta">
+            <a href="about.html" class="btn btn-primary">About Me</a>
+            <a href="projects.html" class="btn btn-outline-light">View Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">A Little About Me</h2>
+        <p class="section-sub">
+          I'm a Software Engineering student at MIVA Open University, currently in my second year.
+          I'm drawn to artificial intelligence and where it's headed next — with an eye on eventually
+          working in computer engineering, building robotics software with integrated AI. This portfolio
+          tracks that journey: my coursework, projects, and the skills I'm building along the way.
+        </p>
+        <div class="hero-cta">
+          <a href="about.html" class="btn btn-outline">Read Full Bio</a>
+          <a href="planner.html" class="btn btn-outline">Open Academic Planner</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <span>{{STUDENT_NAME}}</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">
+        <span>&copy; <span data-year></span> {{STUDENT_NAME}}. COS106 Term Project, MIVA Open University.</span>
+        <span class="powered-by">Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

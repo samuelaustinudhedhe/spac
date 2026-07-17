@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | {{STUDENT_NAME}}</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <audio id="click-sfx" src="assets/audio/click.mp3" preload="auto"></audio>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+        <span>{{STUDENT_NAME}}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Projects</h1>
+        <p>A selection of things I've built or am building. Replace the placeholders below with your own work.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="placeholder-note">
+          Placeholder projects &mdash; swap the image, title, description, tags, and link for each of your 3+ real projects.
+        </div>
+        <div class="grid">
+
+          <article class="card">
+            <img src="assets/images/project-placeholder-1.svg" alt="Screenshot placeholder for Project One">
+            <div class="card-body">
+              <h3>{{PROJECT_1_TITLE}}</h3>
+              <p>{{PROJECT_1_DESCRIPTION}}</p>
+              <div class="card-tags">
+                <span class="tag">{{PROJECT_1_TAG_1}}</span>
+                <span class="tag">{{PROJECT_1_TAG_2}}</span>
+              </div>
+              <a href="#" class="btn btn-outline btn-sm">View Project</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/images/project-placeholder-2.svg" alt="Screenshot placeholder for Project Two">
+            <div class="card-body">
+              <h3>{{PROJECT_2_TITLE}}</h3>
+              <p>{{PROJECT_2_DESCRIPTION}}</p>
+              <div class="card-tags">
+                <span class="tag">{{PROJECT_2_TAG_1}}</span>
+                <span class="tag">{{PROJECT_2_TAG_2}}</span>
+              </div>
+              <a href="#" class="btn btn-outline btn-sm">View Project</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/images/project-placeholder-3.svg" alt="Screenshot placeholder for Project Three">
+            <div class="card-body">
+              <h3>{{PROJECT_3_TITLE}}</h3>
+              <p>{{PROJECT_3_DESCRIPTION}}</p>
+              <div class="card-tags">
+                <span class="tag">{{PROJECT_3_TAG_1}}</span>
+                <span class="tag">{{PROJECT_3_TAG_2}}</span>
+              </div>
+              <a href="#" class="btn btn-outline btn-sm">View Project</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <span>{{STUDENT_NAME}}</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">
+        <span>&copy; <span data-year></span> {{STUDENT_NAME}}. COS106 Term Project, MIVA Open University.</span>
+        <span class="powered-by">Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

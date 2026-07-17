@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | {{STUDENT_NAME}}</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <audio id="click-sfx" src="assets/audio/click.mp3" preload="auto"></audio>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+        <span>{{STUDENT_NAME}}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Academic Planner</h1>
+        <p>Add assignments and tasks, tick them off as you finish, and clear out what you no longer need.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="planner-box">
+          <form class="planner-form" id="task-form">
+            <label for="task-input" class="visually-hidden">Task description</label>
+            <input type="text" id="task-input" placeholder="e.g. Finish COS106 term project" maxlength="120" required>
+
+            <label for="task-due" class="visually-hidden">Due date</label>
+            <input type="date" id="task-due">
+
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </form>
+
+          <div class="planner-stats">
+            <span>Total: <strong id="stat-total">0</strong></span>
+            <span>Completed: <strong id="stat-completed">0</strong></span>
+            <span>Pending: <strong id="stat-pending">0</strong></span>
+          </div>
+
+          <ul class="task-list" id="task-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <span>{{STUDENT_NAME}}</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">
+        <span>&copy; <span data-year></span> {{STUDENT_NAME}}. COS106 Term Project, MIVA Open University.</span>
+        <span class="powered-by">Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | {{STUDENT_NAME}}</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <audio id="click-sfx" src="assets/audio/click.mp3" preload="auto"></audio>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+        <span>{{STUDENT_NAME}}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Questions, collaboration ideas, or just want to say hi &mdash; send a message below.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+
+        <div>
+          <h2 class="section-title">Reach Me Directly</h2>
+          <ul class="info-list">
+            <li><strong>Email</strong> {{STUDENT_EMAIL}}</li>
+            <li><strong>Phone</strong> {{STUDENT_PHONE}}</li>
+            <li><strong>Institution</strong> MIVA Open University</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-status" id="form-status" role="status"></div>
+
+          <div class="field" id="field-name">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name">
+            <span class="field-error" id="error-name"></span>
+          </div>
+
+          <div class="field" id="field-email">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="field-error" id="error-email"></span>
+          </div>
+
+          <div class="field" id="field-phone">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Digits only, e.g. 09020009096">
+            <span class="field-error" id="error-phone"></span>
+          </div>
+
+          <div class="field" id="field-message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+            <span class="field-error" id="error-message"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <span>{{STUDENT_NAME}}</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">
+        <span>&copy; <span data-year></span> {{STUDENT_NAME}}. COS106 Term Project, MIVA Open University.</span>
+        <span class="powered-by">Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

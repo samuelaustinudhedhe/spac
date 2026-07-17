@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | {{STUDENT_NAME}}</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <audio id="click-sfx" src="assets/audio/click.mp3" preload="auto"></audio>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+        <span>{{STUDENT_NAME}}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>About Me</h1>
+        <p>Educational background, career aspirations, technical skills, and the things I enjoy outside of coursework.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Educational Background</h2>
+        <p class="section-sub">Where I'm studying right now and where I stand in the programme.</p>
+        <table class="info-table">
+          <tbody>
+            <tr><th>Institution</th><td>MIVA Open University</td></tr>
+            <tr><th>Programme</th><td>B.Sc. Software Engineering</td></tr>
+            <tr><th>Current Level</th><td>200 Level &mdash; First Semester, Second Year</td></tr>
+            <tr><th>Matric Number</th><td>{{MATRIC_NUMBER}}</td></tr>
+            <tr><th>Student ID</th><td>{{STUDENT_ID}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Career Aspirations</h2>
+        <p class="section-sub">
+          I'm a Software Engineering student looking to venture deeper into artificial intelligence —
+          I'd like to eventually build an AI product of my own. Longer term, my goal is to become a
+          computer engineer, developing robotics software with integrated AI: machines that can sense,
+          reason, and act rather than just follow fixed instructions. Everything I'm studying right now,
+          from core programming to systems fundamentals, is aimed at that goal.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="placeholder-note">
+          Placeholder list &mdash; replace the pills below with your real technical skills (languages, frameworks, tools).
+        </div>
+        <div class="pill-list">
+          <span class="pill">{{SKILL_1}}</span>
+          <span class="pill">{{SKILL_2}}</span>
+          <span class="pill">{{SKILL_3}}</span>
+          <span class="pill">{{SKILL_4}}</span>
+          <span class="pill">{{SKILL_5}}</span>
+          <span class="pill">{{SKILL_6}}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Hobbies &amp; Interests</h2>
+        <div class="placeholder-note">
+          Placeholder list &mdash; replace with your actual hobbies and interests.
+        </div>
+        <ul class="info-list">
+          <li>{{HOBBY_1}}</li>
+          <li>{{HOBBY_2}}</li>
+          <li>{{HOBBY_3}}</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <span>{{STUDENT_NAME}}</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">
+        <span>&copy; <span data-year></span> {{STUDENT_NAME}}. COS106 Term Project, MIVA Open University.</span>
+        <span class="powered-by">Made possible by MIVA &middot; Powered by <a href="https://reonr.com" target="_blank" rel="noopener">Reonr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
