@@ -1,0 +1,6 @@
+services:
+  portfolio:
+    build: .
+    container_name: cos106-portfolio
+    ports:
+      - "8080:80"
