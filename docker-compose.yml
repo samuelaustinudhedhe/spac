@@ -3,4 +3,19 @@ services:
     build: .
     container_name: cos106-portfolio
     ports:
-      - "8080:80"
+      - "8080:80" # direct access fallback, in addition to Traefik
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.cos106.rule=Host(`cos106.localhost`)"
+      - "traefik.http.routers.cos106.entrypoints=web"
+      - "traefik.http.routers.cos106-secure.rule=Host(`cos106.localhost`)"
+      - "traefik.http.routers.cos106-secure.entrypoints=websecure"
+      - "traefik.http.routers.cos106-secure.tls=true"
+      - "traefik.http.services.cos106.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
