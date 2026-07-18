@@ -9,10 +9,36 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightActiveNavLink();
   initClickSound();
   initEntryGate();
+  initThemeToggle();
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 });
+
+/* ---------- Dark mode toggle ----------
+   The theme itself is applied instantly by an inline script in
+   <head> (before first paint, to avoid a flash of the wrong
+   theme). This just wires the button to flip it and remember
+   the choice. */
+function initThemeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  updateThemeToggleIcon(toggle);
+
+  toggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateThemeToggleIcon(toggle);
+  });
+}
+
+function updateThemeToggleIcon(toggle) {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  toggle.textContent = isDark ? '☀️' : '🌙';
+  toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+}
 
 /* ---------- Mobile nav toggle ---------- */
 function initNavToggle() {
