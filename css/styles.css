@@ -335,7 +335,15 @@ audio { display: none; }
   animation: fadeUp 0.9s ease both;
 }
 
-.intro-gate__logo { height: 64px; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35)); }
+.intro-gate__logo {
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--gold-500);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
+}
 
 .intro-gate__badge {
   display: block;
@@ -428,6 +436,24 @@ audio { display: none; }
 .hero-text h1 { color: var(--white); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.75rem; }
 .hero-text p { color: var(--gray-100); max-width: 55ch; margin-bottom: 1.5rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ---------- "A Little About Me" + video (Home) ---------- */
+.about-me-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .about-me-grid { grid-template-columns: 1.3fr 0.9fr; align-items: center; }
+}
+.home-video { max-width: 320px; margin: 0 auto; text-align: center; }
+.home-video video {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+.home-video p { margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); }
 
 /* ---------- Stats strip (Home) ---------- */
 .stats-strip { background: var(--navy-800); padding: 1.75rem 0; }
@@ -607,22 +633,6 @@ audio { display: none; }
 .hobby-card h3 { font-size: 1.02rem; margin-bottom: 0.5rem; }
 .hobby-card p { color: var(--text-muted); font-size: 0.88rem; }
 
-.hobby-video {
-  max-width: 280px;
-  margin: 2.5rem auto 0;
-  text-align: center;
-}
-.hobby-video video {
-  width: 100%;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  background: #000;
-}
-.hobby-video p {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
 
 .info-list li {
   padding: 0.5rem 0;
