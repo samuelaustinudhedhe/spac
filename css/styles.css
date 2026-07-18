@@ -163,10 +163,11 @@ audio { display: none; }
 
 .btn-outline {
   background: transparent;
-  color: var(--navy-900);
-  border: 2px solid var(--navy-900);
+  color: var(--heading);
+  border: 2px solid var(--heading);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
 }
-.btn-outline:hover { background: var(--navy-900); color: var(--white); }
+.btn-outline:hover { background: var(--heading); color: var(--bg); }
 
 .btn-gold {
   background: var(--gold-500);
@@ -387,6 +388,19 @@ audio { display: none; }
 .hero-text p { color: var(--gray-100); max-width: 55ch; margin-bottom: 1.5rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
+/* ---------- Stats strip (Home) ---------- */
+.stats-strip { background: var(--navy-800); padding: 1.75rem 0; }
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  text-align: center;
+}
+.stat-tile { display: flex; flex-direction: column; gap: 0.2rem; min-width: 120px; }
+.stat-number { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gold-500); }
+.stat-label { font-size: 0.78rem; color: var(--gray-100); text-transform: uppercase; letter-spacing: 0.04em; }
+
 /* =========================================================
    SECTIONS / CARDS
    ========================================================= */
@@ -437,6 +451,67 @@ audio { display: none; }
   font-size: 0.85rem;
   font-weight: 500;
 }
+
+/* ---------- Skill groups (About page) ---------- */
+.skill-groups {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.skill-group h3 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--heading); }
+
+/* ---------- Experience timeline (About page) ---------- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+.timeline-item:last-child { border-left-color: transparent; }
+.timeline-dot {
+  position: absolute;
+  left: -7px;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold-500);
+  border: 2px solid var(--surface);
+}
+.timeline-dates {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+.timeline-content h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.timeline-content p { color: var(--text-muted); font-size: 0.92rem; }
+
+/* ---------- Certification cards (About page) ---------- */
+.cert-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.cert-card {
+  background: var(--surface);
+  border-left: 4px solid var(--gold-500);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), transform var(--transition);
+}
+.cert-card:hover { transform: translateY(-4px); }
+.cert-card h3 { font-size: 0.98rem; margin-bottom: 0.3rem; }
+.cert-card p { color: var(--text-muted); font-size: 0.85rem; }
 
 .info-list li {
   padding: 0.5rem 0;
