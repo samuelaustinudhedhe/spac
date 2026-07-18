@@ -410,7 +410,7 @@ audio { display: none; }
   align-items: center;
 }
 @media (min-width: 760px) {
-  .hero .container { grid-template-columns: 1.1fr 0.9fr; }
+  .hero .container { grid-template-columns: minmax(220px, 260px) 1fr; }
 }
 
 .hero-photo {
@@ -421,6 +421,7 @@ audio { display: none; }
   border: 5px solid var(--gold-500);
   box-shadow: var(--shadow-md);
   margin-inline: auto;
+  flex-shrink: 0;
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 
