@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Expense Tracker Flutter app thumbnail">
+  <defs>
+    <linearGradient id="etg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a4c82"/>
+      <stop offset="100%" stop-color="#0a1e3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#etg)"/>
+
+  <!-- wallet -->
+  <rect x="140" y="90" width="90" height="65" rx="8" fill="none" stroke="#c9a35c" stroke-width="3"/>
+  <rect x="140" y="108" width="90" height="16" fill="#c9a35c" opacity="0.25"/>
+  <circle cx="215" cy="116" r="6" fill="#c9a35c"/>
+
+  <!-- bar chart -->
+  <rect x="245" y="120" width="12" height="35" fill="#ffffff" opacity="0.85"/>
+  <rect x="263" y="105" width="12" height="50" fill="#c9a35c"/>
+  <rect x="281" y="130" width="12" height="25" fill="#ffffff" opacity="0.6"/>
+
+  <text x="200" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#f6f7f9">Flutter &#183; Dart &#183; Mobile</text>
+</svg>
