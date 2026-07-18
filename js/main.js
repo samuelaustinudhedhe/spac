@@ -11,10 +11,46 @@ document.addEventListener('DOMContentLoaded', () => {
   initEntryGate();
   initThemeToggle();
   initSkillTabs();
+  initLazyVideo();
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 });
+
+/* ---------- Lazy-loaded, scroll-triggered video (Home page) ----------
+   The video's real src is only set once it's about to scroll into
+   view, so it never competes with the rest of the page for bandwidth
+   on load. It then plays only while actually visible and pauses the
+   moment it scrolls out, and starts at a set volume instead of muted.
+   Guarded so this is a no-op on pages without a .lazy-video element. */
+function initLazyVideo() {
+  const videos = document.querySelectorAll('.lazy-video');
+  if (!videos.length || !('IntersectionObserver' in window)) return;
+
+  videos.forEach(video => {
+    video.volume = parseFloat(video.dataset.volume) || 0.5;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (video.dataset.src) {
+            video.src = video.dataset.src;
+            delete video.dataset.src;
+          }
+          video.play().catch(() => {
+            // Browsers can block programmatic play with sound until the
+            // user has interacted with the page — the visible controls
+            // let them press play manually if that happens.
+          });
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
+  });
+}
 
 /* ---------- Skills tabs (About page) ----------
    Clicking a tab shows its panel and hides the rest. Guarded so

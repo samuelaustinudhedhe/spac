@@ -1,12 +1,25 @@
 /* =========================================================
    Academic Planner — add / complete / delete tasks.
-   Tasks are held in an array and persisted to localStorage so
-   the list survives a page refresh.
+
+   assets/data/tasks.json holds the preinstalled starter goals — it's
+   only ever read, to seed a genuinely first visit. Every add, check,
+   and delete after that is persisted to localStorage, which is also
+   what survives a page refresh day to day.
    ========================================================= */
 
 const STORAGE_KEY = 'cos106_planner_tasks';
+const SEED_URL = 'assets/data/tasks.json';
 
-let tasks = loadTasks();
+// Used only if assets/data/tasks.json can't be fetched (missing, bad
+// JSON, opened from disk without a server, etc.), so a first visit
+// never ends up with an empty planner.
+const FALLBACK_SEED_TASKS = [
+  'Track GPA every semester and review flagged modules early',
+  'Submit the COS106 term project before the deadline',
+  'Register for 200 Level courses as soon as the portal opens',
+];
+
+let tasks = [];
 
 const form = document.getElementById('task-form');
 const input = document.getElementById('task-input');
@@ -14,6 +27,12 @@ const dueInput = document.getElementById('task-due');
 const list = document.getElementById('task-list');
 
 if (form) {
+  init();
+}
+
+async function init() {
+  tasks = await loadTasks();
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     addTask(input.value, dueInput.value);
@@ -32,12 +51,41 @@ if (form) {
   renderTasks();
 }
 
-function loadTasks() {
+async function loadTasks() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    if (raw) return JSON.parse(raw);
   } catch {
-    return [];
+    // localStorage unavailable or corrupted — fall through and seed fresh.
+  }
+
+  const seedTexts = await fetchSeedGoals();
+  const seeded = seedTexts.map((text, index) => ({
+    id: Date.now() + index,
+    text,
+    dueDate: '',
+    completed: false,
+  }));
+
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+  } catch {
+    // Storage may be unavailable (e.g. private browsing quota) — the
+    // seeded list still works for this session even if it can't persist.
+  }
+
+  return seeded;
+}
+
+async function fetchSeedGoals() {
+  try {
+    const response = await fetch(SEED_URL);
+    if (!response.ok) throw new Error('bad response');
+    const data = await response.json();
+    if (Array.isArray(data) && data.length) return data;
+    throw new Error('empty or invalid seed data');
+  } catch {
+    return FALLBACK_SEED_TASKS;
   }
 }
 

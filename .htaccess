@@ -1,0 +1,40 @@
+# Security hardening for this static HTML/CSS/JS site.
+# Nothing here should ever execute server-side — enforce that even if
+# this project ends up on a host that would otherwise run it.
+
+# No directory listings, no CGI execution.
+Options -Indexes -ExecCGI -MultiViews
+ServerSignature Off
+
+# Never execute PHP or any other server-side script in this project's
+# scope, even if a file with one of these extensions ends up here.
+<FilesMatch "\.(php|php[3-8]?|phtml|phar|pl|py|cgi|sh|bash|asp|aspx|jsp|jspx|cfm|exe)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+RemoveHandler .php .php3 .php4 .php5 .php7 .phtml .pl .py .cgi
+RemoveType .php .php3 .php4 .php5 .php7 .phtml .pl .py .cgi
+
+# Block access to dotfiles (.git, .env, .htaccess itself, etc.).
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
