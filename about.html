@@ -221,105 +221,111 @@
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
         <p class="section-sub">10+ years across full stack development, server infrastructure, mobile, and Web3.</p>
-        <div class="skill-groups">
-          <div class="skill-group">
-            <h3>Languages &amp; Frameworks</h3>
-            <div class="pill-list">
-              <span class="pill">PHP</span>
-              <span class="pill">Laravel</span>
-              <span class="pill">Livewire</span>
-              <span class="pill">JavaScript</span>
-              <span class="pill">jQuery</span>
-              <span class="pill">Alpine.js</span>
-              <span class="pill">Tailwind CSS</span>
-              <span class="pill">HTML5 &amp; CSS3</span>
-              <span class="pill">SCSS</span>
-              <span class="pill">Bash Scripting</span>
-              <span class="pill">Dart</span>
-              <span class="pill">Flutter</span>
-            </div>
+
+        <div class="skills-tabs">
+          <div class="skills-tablist" role="tablist" aria-label="Technical skill categories">
+            <button class="skills-tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-languages" id="tab-languages">Languages &amp; Frameworks</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-infra" id="tab-infra">Infrastructure &amp; Servers</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-cloud" id="tab-cloud">Cloud, Systems &amp; Networking</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-web3" id="tab-web3">Web3 &amp; Emerging Tech</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools">Tools &amp; Practice</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-marketing" id="tab-marketing">Marketing &amp; Design</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-professional" id="tab-professional">Professional Skills</button>
+            <button class="skills-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-learning" id="tab-learning">Currently Learning</button>
           </div>
-          <div class="skill-group">
-            <h3>Infrastructure &amp; Servers</h3>
-            <div class="pill-list">
-              <span class="pill">WHM / cPanel</span>
-              <span class="pill">WHMCS</span>
-              <span class="pill">Plesk</span>
-              <span class="pill">Virtualmin / WebMin</span>
-              <span class="pill">CloudLinux</span>
-              <span class="pill">LiteSpeed</span>
-              <span class="pill">Traefik</span>
-              <span class="pill">Nginx</span>
-              <span class="pill">CDN Configuration</span>
+
+          <div class="skills-panels">
+            <div class="skills-panel active" id="panel-languages" role="tabpanel" aria-labelledby="tab-languages">
+              <div class="pill-list">
+                <span class="pill">PHP</span>
+                <span class="pill">Laravel</span>
+                <span class="pill">Livewire</span>
+                <span class="pill">JavaScript</span>
+                <span class="pill">jQuery</span>
+                <span class="pill">Alpine.js</span>
+                <span class="pill">Tailwind CSS</span>
+                <span class="pill">HTML5 &amp; CSS3</span>
+                <span class="pill">SCSS</span>
+                <span class="pill">Bash Scripting</span>
+                <span class="pill">Dart</span>
+                <span class="pill">Flutter</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Cloud, Systems &amp; Networking</h3>
-            <div class="pill-list">
-              <span class="pill">AWS</span>
-              <span class="pill">Google Cloud Platform</span>
-              <span class="pill">Microsoft Azure</span>
-              <span class="pill">Linux / Ubuntu (daily on Kubuntu)</span>
-              <span class="pill">CentOS</span>
-              <span class="pill">AlmaLinux</span>
-              <span class="pill">Windows</span>
-              <span class="pill">TCP/IP &amp; DNS</span>
-              <span class="pill">VPN &amp; Subnets</span>
-              <span class="pill">Network Security</span>
-              <span class="pill">Hardware &amp; System Repair</span>
+            <div class="skills-panel" id="panel-infra" role="tabpanel" aria-labelledby="tab-infra" hidden>
+              <div class="pill-list">
+                <span class="pill">WHM / cPanel</span>
+                <span class="pill">WHMCS</span>
+                <span class="pill">Plesk</span>
+                <span class="pill">Virtualmin / WebMin</span>
+                <span class="pill">CloudLinux</span>
+                <span class="pill">LiteSpeed</span>
+                <span class="pill">Traefik</span>
+                <span class="pill">Nginx</span>
+                <span class="pill">CDN Configuration</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Web3 &amp; Emerging Tech</h3>
-            <div class="pill-list">
-              <span class="pill">Web3 Development</span>
-              <span class="pill">Wallet Systems</span>
-              <span class="pill">Blockchain Integration</span>
+            <div class="skills-panel" id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud" hidden>
+              <div class="pill-list">
+                <span class="pill">AWS</span>
+                <span class="pill">Google Cloud Platform</span>
+                <span class="pill">Microsoft Azure</span>
+                <span class="pill">Linux / Ubuntu (daily on Kubuntu)</span>
+                <span class="pill">CentOS</span>
+                <span class="pill">AlmaLinux</span>
+                <span class="pill">Windows</span>
+                <span class="pill">TCP/IP &amp; DNS</span>
+                <span class="pill">VPN &amp; Subnets</span>
+                <span class="pill">Network Security</span>
+                <span class="pill">Hardware &amp; System Repair</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Tools &amp; Practice</h3>
-            <div class="pill-list">
-              <span class="pill">Git / Version Control</span>
-              <span class="pill">MySQL</span>
-              <span class="pill">WordPress / WooCommerce</span>
-              <span class="pill">Software Testing</span>
-              <span class="pill">Debugging &amp; Troubleshooting</span>
-              <span class="pill">DB Backup &amp; Maintenance</span>
-              <span class="pill">Agile Development</span>
-              <span class="pill">UI/UX Design</span>
-              <span class="pill">SEO</span>
-              <span class="pill">Client Communication</span>
+            <div class="skills-panel" id="panel-web3" role="tabpanel" aria-labelledby="tab-web3" hidden>
+              <div class="pill-list">
+                <span class="pill">Web3 Development</span>
+                <span class="pill">Wallet Systems</span>
+                <span class="pill">Blockchain Integration</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Marketing &amp; Design</h3>
-            <div class="pill-list">
-              <span class="pill">Digital Marketing</span>
-              <span class="pill">Strategic Marketing</span>
-              <span class="pill">Email &amp; Direct Mail Campaigns</span>
-              <span class="pill">Social Media Management</span>
-              <span class="pill">Adobe Photoshop</span>
-              <span class="pill">Logo &amp; Graphic Design</span>
+            <div class="skills-panel" id="panel-tools" role="tabpanel" aria-labelledby="tab-tools" hidden>
+              <div class="pill-list">
+                <span class="pill">Git / Version Control</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">WordPress / WooCommerce</span>
+                <span class="pill">Software Testing</span>
+                <span class="pill">Debugging &amp; Troubleshooting</span>
+                <span class="pill">DB Backup &amp; Maintenance</span>
+                <span class="pill">Agile Development</span>
+                <span class="pill">UI/UX Design</span>
+                <span class="pill">SEO</span>
+                <span class="pill">Client Communication</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Professional Skills</h3>
-            <div class="pill-list">
-              <span class="pill">Negotiation</span>
-              <span class="pill">Interpersonal Communication</span>
-              <span class="pill">Blogging</span>
-              <span class="pill">Research</span>
-              <span class="pill">Problem Solving</span>
-              <span class="pill">Strategic Thinking</span>
-              <span class="pill">Self-Starter</span>
+            <div class="skills-panel" id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing" hidden>
+              <div class="pill-list">
+                <span class="pill">Digital Marketing</span>
+                <span class="pill">Strategic Marketing</span>
+                <span class="pill">Email &amp; Direct Mail Campaigns</span>
+                <span class="pill">Social Media Management</span>
+                <span class="pill">Adobe Photoshop</span>
+                <span class="pill">Logo &amp; Graphic Design</span>
+              </div>
             </div>
-          </div>
-          <div class="skill-group">
-            <h3>Currently Learning</h3>
-            <div class="pill-list">
-              <span class="pill">Docker</span>
-              <span class="pill">Python</span>
+            <div class="skills-panel" id="panel-professional" role="tabpanel" aria-labelledby="tab-professional" hidden>
+              <div class="pill-list">
+                <span class="pill">Negotiation</span>
+                <span class="pill">Interpersonal Communication</span>
+                <span class="pill">Blogging</span>
+                <span class="pill">Research</span>
+                <span class="pill">Problem Solving</span>
+                <span class="pill">Strategic Thinking</span>
+                <span class="pill">Self-Starter</span>
+              </div>
+            </div>
+            <div class="skills-panel" id="panel-learning" role="tabpanel" aria-labelledby="tab-learning" hidden>
+              <div class="pill-list">
+                <span class="pill">Docker</span>
+                <span class="pill">Python</span>
+              </div>
             </div>
           </div>
         </div>
@@ -357,23 +363,72 @@
     <section class="section section-alt">
       <div class="container">
         <h2 class="section-title">Hobbies &amp; Interests</h2>
-        <ul class="info-list">
-          <li><strong>Athletics &amp; Sports</strong> Basketball player with strong leadership, persistence,
-              and a drive to excel as part of a team. Former six-a-side footballer and runner, and a
-              fitness enthusiast who adapts quickly to changing environments &mdash; charismatic, outgoing,
-              and always trying to bring others along in reaching their goals.</li>
-          <li><strong>Programming &amp; Development</strong> Self-starter who communicates clearly through
-              speaking and writing, and stays driven toward long-term goals. Enjoys problem-solving as a
-              web developer, applying a broad set of technical skills across a high volume of projects.</li>
-          <li><strong>Chess &amp; Maths</strong> Enjoys a good game of chess, and keeps sharp with maths
-              through Duolingo's maths games.</li>
-          <li><strong>Gaming</strong> Plays on mobile and PS5 &mdash; currently into Apex Legends, God of
-              War (2018) and God of War Ragnar&ouml;k, and FIFA 26.</li>
-          <li><strong>Language Learning</strong> Learning Japanese on Duolingo.</li>
-          <li><strong>Music</strong> Listening to music.</li>
-          <li><strong>Anime, Movies &amp; Shows</strong> Anime like Solo Leveling, action movies like the
-              Avengers series, and cartoons like Invincible.</li>
-        </ul>
+        <p class="section-sub">A few things I spend my time on outside of code.</p>
+        <div class="hobby-grid">
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6c2.9 3 2.9 9.8 0 12.8M18.4 5.6c-2.9 3-2.9 9.8 0 12.8"/></svg>
+            </div>
+            <h3>Athletics &amp; Sports</h3>
+            <p>Basketball player with strong leadership, persistence, and a drive to excel as part of a
+               team. Former six-a-side footballer and runner, and a fitness enthusiast who adapts
+               quickly to changing environments.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+            </div>
+            <h3>Programming &amp; Development</h3>
+            <p>Self-starter who communicates clearly through speaking and writing, and stays driven
+               toward long-term goals &mdash; enjoys problem-solving as a web developer across a high
+               volume of projects.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-1.6 5.55C9.3 8.5 8.5 10 8.5 11.6c0 .95.3 1.85.8 2.6-1.4.7-2.3 2-2.3 3.7v1.1h10v-1.1c0-1.7-.9-3-2.3-3.7.5-.75.8-1.65.8-2.6 0-1.6-.8-3.1-1.9-4.05A3 3 0 0 0 12 2Z"/><path d="M6 22h12"/></svg>
+            </div>
+            <h3>Chess &amp; Maths</h3>
+            <p>Enjoys a good game of chess, and keeps sharp with maths through Duolingo's maths games.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="19" height="9.5" rx="4.5"/><path d="M8 11v3.2M6.4 12.6h3.2"/><circle cx="16" cy="11.3" r="1"/><circle cx="18.2" cy="13.5" r="1"/></svg>
+            </div>
+            <h3>Gaming</h3>
+            <p>Plays on mobile and PS5 &mdash; currently into Apex Legends, God of War (2018) and God of
+               War Ragnar&ouml;k, and FIFA 26.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Language Learning</h3>
+            <p>Learning Japanese on Duolingo.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+            </div>
+            <h3>Music</h3>
+            <p>Listening to music.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l1.8-3.5h3.4L6.4 8M9.8 8l1.8-3.5h3.4L13.2 8M16.6 8l1.8-3.5h3L19.6 8"/><rect x="3" y="8" width="18" height="12" rx="1.2"/></svg>
+            </div>
+            <h3>Anime, Movies &amp; Shows</h3>
+            <p>Anime like Solo Leveling, action movies like the Avengers series, and cartoons like
+               Invincible.</p>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>

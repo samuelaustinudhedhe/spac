@@ -10,10 +10,39 @@ document.addEventListener('DOMContentLoaded', () => {
   initClickSound();
   initEntryGate();
   initThemeToggle();
+  initSkillTabs();
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 });
+
+/* ---------- Skills tabs (About page) ----------
+   Clicking a tab shows its panel and hides the rest. Guarded so
+   this is a no-op on pages without a .skills-tab element. */
+function initSkillTabs() {
+  const tabs = document.querySelectorAll('.skills-tab');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.skills-panel').forEach(panel => {
+        panel.classList.remove('active');
+        panel.hidden = true;
+      });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.hidden = false;
+      panel.classList.add('active');
+    });
+  });
+}
 
 /* ---------- Dark mode toggle ----------
    The theme itself is applied instantly by an inline script in

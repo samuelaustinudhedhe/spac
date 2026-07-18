@@ -554,6 +554,59 @@ audio { display: none; }
 .cert-card h3 { font-size: 0.98rem; margin-bottom: 0.3rem; }
 .cert-card p { color: var(--text-muted); font-size: 0.85rem; }
 
+/* ---------- Skills tabs (About page) ---------- */
+.skills-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.skills-tab {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition);
+}
+.skills-tab:hover { background: var(--surface-alt); color: var(--heading); }
+.skills-tab.active { background: var(--navy-900); color: var(--white); }
+
+.skills-panel[hidden] { display: none; }
+.skills-panel { animation: fadeUp 0.3s ease both; }
+
+/* ---------- Hobby cards (About page) ---------- */
+.hobby-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.hobby-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.hobby-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.hobby-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+.hobby-icon svg { width: 22px; height: 22px; }
+.hobby-card h3 { font-size: 1.02rem; margin-bottom: 0.5rem; }
+.hobby-card p { color: var(--text-muted); font-size: 0.88rem; }
+
 .info-list li {
   padding: 0.5rem 0;
   border-bottom: 1px dashed var(--border);
