@@ -2,6 +2,12 @@ services:
   portfolio:
     build: .
     container_name: cos106-portfolio
+    environment:
+      # Baked into every {{SITE_URL}} placeholder (canonical link, Open
+      # Graph/Twitter meta tags) at container start. Override with the
+      # real production domain when deploying anywhere but local dev,
+      # e.g. SITE_URL=https://cos106.reonr.com docker compose up -d
+      - SITE_URL=${SITE_URL:-https://cos106.localhost}
     ports:
       - "8080:80" # direct access fallback, in addition to Traefik
     networks:

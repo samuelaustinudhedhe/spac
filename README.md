@@ -8,7 +8,7 @@ Live at [cos106.localhost](https://cos106.localhost) (local Traefik) or `http://
 
 | Page | File | What's there |
 |---|---|---|
-| Home | `index.html` | Entry gate (speech-synthesis welcome), hero, stats strip, bowling video |
+| Home | `index.html` | Entry gate, hero, stats strip, bowling video |
 | About Me | `about.html` | Professional summary, education, career aspirations, experience timeline, tabbed technical skills, certifications, hobbies |
 | Projects | `projects.html` | Real projects: COS102 toolkit, Reonr, Laravel Livewire Select Component, Expense Tracker, Tontrends |
 | Academic Planner | `planner.html` | Add/complete/delete task manager, persisted to `localStorage` |
@@ -26,7 +26,7 @@ Live at [cos106.localhost](https://cos106.localhost) (local Traefik) or `http://
 docker compose up -d --build
 ```
 
-Serves on `http://localhost:8080`. If you have the project's Traefik `proxy` network running (see `docker-compose.yml` labels), it's also reachable at `https://mrsau.localhost`.
+Serves on `http://localhost:8080`. If you have the project's Traefik `proxy` network running (see `docker-compose.yml` labels), it's also reachable at `https://cos106.localhost`.
 
 To stop:
 
@@ -49,7 +49,10 @@ docker compose down
 │   ├── video/        # wow.mp4 (bowling clip), intro.mp4 pending
 │   ├── code/cos102/  # real Python source for the COS102 project card
 │   └── data/         # tasks.json — preinstalled Academic Planner goals
-├── Dockerfile, docker-compose.yml, .dockerignore, .htaccess
+├── Dockerfile, docker-entrypoint-site.sh, docker-compose.yml, .dockerignore, .htaccess
+├── robots.txt, sitemap.xml
+├── AI.README.md, llms.txt   # crawler-facing summary for AI systems (mirrors each other)
+├── CLAUDE.md                # repo-editing guardrails for AI coding assistants
 ```
 
 ## SEO
@@ -57,8 +60,41 @@ docker compose down
 Every page carries a description, canonical link, and Open Graph/Twitter Card
 tags (shared `assets/images/og-image.jpg`, a screenshot of the homepage entry
 gate). `<meta name="robots" content="noindex, nofollow">` is set site-wide on
-purpose — this is a coursework/practice site, not meant to be indexed by
-search engines.
+purpose — this is a coursework/practice site, not meant to rank in search
+results.
+
+`robots.txt` still `Allow: /` for everyone (including AI crawlers) and points
+to `sitemap.xml`, which lists all five pages — crawling is allowed, indexing
+into search results isn't; that split is what the per-page `noindex` tag is
+for. `AI.README.md` and `llms.txt` (identical content, two filenames for
+compatibility — the latter is the emerging convention AI crawlers look for
+by default) give AI systems accurate, non-sensitive context about Samuel and
+the site to answer questions with, without needing to guess at anything
+private.
+
+Every page's HTML has `{{SITE_URL}}` in place of a real domain for the
+canonical link and every Open Graph/Twitter `image`/`url` tag — see
+[Site URL substitution](#site-url-substitution) below for how that gets
+filled in for real. Until it's deployed somewhere publicly reachable over
+HTTPS, link previews on WhatsApp/Instagram/Facebook won't render at all —
+those crawlers can't reach `localhost` or a LAN-only Traefik host no matter
+what the tags say.
+
+## Site URL substitution
+
+`docker-entrypoint-site.sh` runs before nginx starts and replaces every
+`{{SITE_URL}}` in the built HTML with the `SITE_URL` environment variable
+(`docker-compose.yml`), so the actual HTML nginx serves has real absolute
+URLs baked in — this has to happen server-side since link-preview crawlers
+don't execute JavaScript. Defaults to `https://cos106.localhost` for local
+dev; override it for a real deployment:
+
+```bash
+SITE_URL=https://your-real-domain.com docker compose up -d --build
+```
+
+The `{{SITE_URL}}` tokens in the source `.html` files themselves are never
+modified — only the copy inside the running container is.
 
 ## Academic Planner data
 
@@ -74,6 +110,5 @@ empty.
 A couple of pieces are still pending real content:
 
 - **Telegram and Facebook** social links (`{{SOCIAL_TELEGRAM_URL}}`, `{{SOCIAL_FACEBOOK_URL}}` in the footer of every page) — Facebook's link is commented out until it's ready.
-- **Site URL** (`{{SITE_URL}}` in the canonical/Open Graph/Twitter meta tags on every page) — swap in the real production domain once one exists.
 - **Intro video** — the homepage entry gate uses a CSS-animated placeholder; a real `assets/video/intro.mp4` can be dropped in and the `<video>` tag in `index.html` uncommented.
 - **Flutter certification** — listed on the About page pending the certificate details.

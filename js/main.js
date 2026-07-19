@@ -1,7 +1,6 @@
 /* =========================================================
    Shared behaviour for every page: nav toggle, active-link
-   highlighting, click sound effect, and the home-page entry
-   gate (speech-synthesis welcome message).
+   highlighting, click sound effect, and the home-page entry gate.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -132,19 +131,24 @@ function highlightActiveNavLink() {
 
 /* ---------- Click sound effect ----------
    A short synthesized tone (assets/audio/click.mp3) plays at low
-   volume whenever a button or nav link is clicked. Cloning the
-   node lets rapid successive clicks overlap instead of cutting
-   each other off. */
+   volume whenever a button or nav link is clicked. Reuses the single
+   element already in the DOM rather than cloning a fresh one per
+   click — cloned, never-attached audio elements are unreliable on
+   Safari/iOS, since each clone is a "new" element that hasn't been
+   unlocked by a user gesture. Rapid successive clicks just restart
+   the same short clip instead of overlapping, which is unnoticeable
+   at this length. */
 function initClickSound() {
-  const source = document.getElementById('click-sfx');
-  if (!source) return;
+  const sfx = document.getElementById('click-sfx');
+  if (!sfx) return;
+
+  sfx.volume = 0.25;
 
   document.addEventListener('click', event => {
     const trigger = event.target.closest('.btn, .nav-links a, .task-check, .task-delete, .nav-toggle');
     if (!trigger) return;
 
-    const sfx = source.cloneNode(true);
-    sfx.volume = 0.25;
+    sfx.currentTime = 0;
     sfx.play().catch(() => {
       /* Autoplay can be blocked before the user's first interaction
          with the page — safe to ignore, the click itself is that
@@ -154,16 +158,13 @@ function initClickSound() {
 }
 
 /* ---------- Entry gate (home page only) ----------
-   Clicking "Enter Site" fades out the splash and speaks a short
-   welcome message via the Web Speech API. This stands in for a
-   recorded welcome audio clip and needs no external asset. */
+   Clicking "Enter Site" fades out the splash. */
 function initEntryGate() {
   const gate = document.getElementById('intro-gate');
   const enterBtn = document.getElementById('enter-site-btn');
   if (!gate || !enterBtn) return;
 
   enterBtn.addEventListener('click', () => {
-    speakWelcome('Welcome to Samuel Austin\'s Portfolio');
     gate.classList.add('hidden');
     document.body.classList.remove('gate-locked');
     sessionStorage.setItem('gatePassed', '1');
@@ -174,14 +175,4 @@ function initEntryGate() {
     gate.classList.add('hidden');
     document.body.classList.remove('gate-locked');
   }
-}
-
-function speakWelcome(text) {
-  if (!('speechSynthesis' in window)) return;
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.95;
-  utterance.pitch = 1;
-  utterance.volume = 0.6; // kept low so it doesn't startle anyone
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
 }
