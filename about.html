@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+  <script src="js/theme-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Samuel Austin Udhedhe</title>
   <meta name="description" content="Educational background, career aspirations, technical skills, experience, and hobbies of Samuel Austin Udhedhe, Software Engineering student at MIVA Open University.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{SITE_URL}}/about.html">
 
   <meta property="og:type" content="profile">
@@ -38,7 +32,7 @@
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand">
-        <img src="assets/images/9c1b5403-res.png" alt="Dev Sau logo"  class="header-logo">
+        <img src="assets/images/9c1b5403-res.webp" alt="Dev Sau logo"  class="header-logo">
         <span>SAU</span>
       </a>
       <div class="nav-right">
@@ -101,7 +95,7 @@
         <h2 class="section-title">Career Aspirations</h2>
         <p class="section-sub">
           I'm a Software Engineering student at MIVA, though I'm already founder and lead engineer at
-          <a href="https://reonr.com" target="_blank" rel="noopener" style="color:var(--gold-500); text-decoration:underline;">Reonr</a>,
+          <a href="https://reonr.com" target="_blank" rel="noopener" class="link-gold">Reonr</a>,
           where I spend my days building hosting infrastructure. Right now my focus is venturing deeper
           into artificial intelligence. I'm working through AI and Machine Learning coursework alongside
           my degree, with the goal of eventually building an AI product of my own. Longer term, I want to
@@ -461,7 +455,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo" loading="lazy">
           <span>Samuel Austin Udhedhe</span>
         </div>
         <nav class="footer-links">

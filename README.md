@@ -59,14 +59,11 @@ docker compose down
 
 Every page carries a description, canonical link, and Open Graph/Twitter Card
 tags (shared `assets/images/og-image.jpg`, a screenshot of the homepage entry
-gate). `<meta name="robots" content="noindex, nofollow">` is set site-wide on
-purpose — this is a coursework/practice site, not meant to rank in search
-results.
+gate). `<meta name="robots" content="index, follow">` is set site-wide —
+search engines and AI crawlers are welcome to index and rank this site.
 
-`robots.txt` still `Allow: /` for everyone (including AI crawlers) and points
-to `sitemap.xml`, which lists all five pages — crawling is allowed, indexing
-into search results isn't; that split is what the per-page `noindex` tag is
-for. `AI.README.md` and `llms.txt` (identical content, two filenames for
+`robots.txt` sets `Allow: /` for everyone (including AI crawlers) and points
+to `sitemap.xml`, which lists all five pages. `AI.README.md` and `llms.txt` (identical content, two filenames for
 compatibility — the latter is the emerging convention AI crawlers look for
 by default) give AI systems accurate, non-sensitive context about Samuel and
 the site to answer questions with, without needing to guess at anything
@@ -95,6 +92,17 @@ SITE_URL=https://your-real-domain.com docker compose up -d --build
 
 The `{{SITE_URL}}` tokens in the source `.html` files themselves are never
 modified — only the copy inside the running container is.
+
+## Security headers
+
+Production security headers (CSP, Permissions-Policy, HSTS, etc.) are
+configured server-side only, outside this repo — not duplicated here.
+
+Content-wise, this repo is already CSP-friendly regardless of exact policy:
+`js/theme-init.js` is a separate file rather than an inline `<head>` script,
+and there are no inline `style="..."` attributes anywhere in the HTML — use
+the `.link-gold` / `.card-actions` utility classes (or add a new one)
+instead of reaching for an inline style.
 
 ## Academic Planner data
 

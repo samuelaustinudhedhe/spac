@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+  <script src="js/theme-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Samuel Austin Udhedhe</title>
   <meta name="description" content="A selection of projects built by Samuel Austin Udhedhe, from a COS102 lab assessment to Reonr, the NVMe hosting platform he founded and runs.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{SITE_URL}}/projects.html">
 
   <meta property="og:type" content="website">
@@ -38,7 +32,7 @@
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand">
-        <img src="assets/images/9c1b5403-res.png" alt="Dev Sau logo"  class="header-logo">
+        <img src="assets/images/9c1b5403-res.webp" alt="Dev Sau logo"  class="header-logo">
         <span>SAU</span>
       </a>
       <div class="nav-right">
@@ -82,7 +76,7 @@
                 <span class="tag">Problem Solving</span>
                 <span class="tag">Matplotlib</span>
               </div>
-              <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <div class="card-actions">
                 <a href="assets/code/cos102/triangle_checker.py" class="btn btn-outline btn-sm">View Source</a>
                 <a href="https://colab.research.google.com/drive/1eTckndV7icZj95jbsaFriMHSfII2HFp9?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visual Demo (Colab)</a>
               </div>
@@ -90,7 +84,7 @@
           </article>
 
           <article class="card">
-            <img src="assets/images/project-reonr.png" alt="Reonr.com homepage, showing the NVMe hosting hero section and platform dashboard preview">
+            <img src="assets/images/project-reonr.webp" alt="Reonr.com homepage, showing the NVMe hosting hero section and platform dashboard preview" loading="lazy">
             <div class="card-body">
               <h3>Reonr &mdash; NVMe Web Hosting Platform</h3>
               <p>The biggest site I've built so far this year by raw page count. Reonr is a full hosting company
@@ -140,7 +134,7 @@
           </article>
 
           <article class="card">
-            <img src="assets/images/project-tontrends.png" alt="Tontrends app landing page with phone mockup">
+            <img src="assets/images/project-tontrends.webp" alt="Tontrends app landing page with phone mockup" loading="lazy">
             <div class="card-body">
               <h3>Tontrends</h3>
               <p>A social app I built in 2019. Connect with friends and meet new people, with a
@@ -164,7 +158,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo" loading="lazy">
           <span>Samuel Austin Udhedhe</span>
         </div>
         <nav class="footer-links">

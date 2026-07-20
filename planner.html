@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+  <script src="js/theme-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academic Planner | Samuel Austin Udhedhe</title>
   <meta name="description" content="An interactive academic planner for tracking coursework goals and tasks, built with vanilla JavaScript by Samuel Austin Udhedhe for his MIVA Open University web technologies project.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{SITE_URL}}/planner.html">
 
   <meta property="og:type" content="website">
@@ -94,7 +88,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo" loading="lazy">
           <span>Samuel Austin Udhedhe</span>
         </div>
         <nav class="footer-links">

@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+  <script src="js/theme-init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samuel Austin Udhedhe | Student Portfolio</title>
   <meta name="description" content="Personal academic portfolio and student management site for Samuel Austin Udhedhe, Software Engineering student at MIVA Open University.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{SITE_URL}}/index.html">
 
   <meta property="og:type" content="website">
@@ -41,7 +35,7 @@
   <div class="intro-gate" id="intro-gate">
     <!-- <video autoplay muted loop playsinline src="assets/video/intro.mp4"></video> -->
     <div class="intro-gate__card">
-      <img src="assets/images/9c1b5403-res.png" alt="Samuel Austin Udhedhe" class="intro-gate__logo">
+      <img src="assets/images/9c1b5403-res.webp" alt="Samuel Austin Udhedhe" class="intro-gate__logo">
       <span class="intro-gate__badge">Software Engineering Student &middot; Senior Full Stack Developer</span>
       <h1>Welcome to Samuel Austin Udhedhe's Portfolio</h1>
       <p>Step in to explore my profile, projects, and academic planner.</p>
@@ -56,7 +50,7 @@
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand">
-        <img src="assets/images/9c1b5403-res.png" alt="Dev Sau logo"  class="header-logo">
+        <img src="assets/images/9c1b5403-res.webp" alt="Dev Sau logo"  class="header-logo">
         <span>SAU</span>
       </a>
       <div class="nav-right">
@@ -79,7 +73,7 @@
     <section class="hero">
       <div class="container">
         <div class="hero-photo">
-          <img src="assets/images/2eb75e99-725e-4130-b7d5-a289f82a6a54.jpeg" alt="Samuel Austin Udhedhe">
+          <img src="assets/images/2eb75e99-725e-4130-b7d5-a289f82a6a54.webp" alt="Samuel Austin Udhedhe" fetchpriority="high">
         </div>
         <div class="hero-text">
           <span class="eyebrow">Software Engineering Student &middot; Senior Full Stack Developer</span>
@@ -87,7 +81,7 @@
           <p>Welcome to my academic portfolio. I'm in my first year, second semester, studying Software
              Engineering at MIVA Open University. Outside of class, I've spent the last 10+ years coding
              professionally, and I currently run
-             <a href="https://reonr.com" target="_blank" rel="noopener" style="color:var(--gold-500); text-decoration:underline;">Reonr</a>,
+             <a href="https://reonr.com" target="_blank" rel="noopener" class="link-gold">Reonr</a>,
              a web hosting platform I founded. This site brings together my profile, projects, and a
              personal academic planner in one place.</p>
           <div class="hero-cta">
@@ -147,7 +141,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo">
+          <img src="assets/images/logo-placeholder.svg" alt="MIVA Open University logo" loading="lazy">
           <span>Samuel Austin Udhedhe</span>
         </div>
         <nav class="footer-links">

@@ -139,6 +139,8 @@ audio { display: none; }
   white-space: nowrap;
 }
 
+.link-gold { color: var(--gold-500); text-decoration: underline; }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -508,6 +510,7 @@ audio { display: none; }
 .card-body h3 { font-size: 1.15rem; }
 .card-body p { color: var(--text-muted); font-size: 0.92rem; flex: 1; }
 .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tag {
   background: var(--surface-alt);
   color: var(--heading);

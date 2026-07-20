@@ -1,5 +1,14 @@
 # Version History
 
+## 1.3.0 — 2026-07-20
+
+- Contact form now actually delivers to `s.austin9897@miva.edu.ng` via Web3Forms — previously it only validated and showed a fake "message received" status without sending anything anywhere
+- Site is now open to search engine/AI crawler indexing (`index, follow`, reversing the earlier `noindex, nofollow`)
+- Converted all content photos/screenshots to WebP (hero photo, header logo, both project screenshots), roughly halving their size on average; `og-image.jpg` and favicons intentionally kept in their original formats for social-preview and cross-browser favicon compatibility
+- Added `loading="lazy"` to below-the-fold images (footer logos, project screenshots) and `fetchpriority="high"` to the homepage hero photo (likely LCP element)
+- Synced `js/theme-init.js` and removed all inline `style="..."` attributes (now `.link-gold` / `.card-actions` CSS classes) to match production's stricter CSP with no inline-script/style exceptions
+- Production nginx/security-header configuration now intentionally lives server-side only, not duplicated in this repo
+
 ## 1.2.0 — 2026-07-19
 
 - Removed matric number and student ID from the About page; added `CLAUDE.md` with a hard rule against ever exposing private credentials

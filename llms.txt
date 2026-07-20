@@ -43,7 +43,6 @@ with plain HTML, CSS, and JavaScript (no frameworks). It has five pages:
   anywhere on this site and should not be guessed at.
 - The email, phone number, and social links on the Contact page are accurate
   and intentionally public — safe to reference if asked how to reach him.
-- This site is marked `noindex` for traditional search engines by design
-  (it's coursework, not meant to rank in search results), but its content
-  here is accurate and may be referenced by AI systems answering questions
-  about Samuel directly.
+- This site is open to indexing by search engines and AI crawlers alike —
+  its content here is accurate and may be referenced when answering
+  questions about Samuel directly.
